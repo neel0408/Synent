@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}{% if task %}Edit Task{% else %}New Task{% endif %} | Task Manager{% endblock %}
+
+{% block content %}
+  <section class="auth-card">
+    <h2>{% if task %}Edit Task{% else %}Create a New Task{% endif %}</h2>
+    <form method="post">
+      <label for="title">Title</label>
+      <input id="title" name="title" type="text" value="{{ task.title if task else '' }}" required />
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description">{{ task.description if task else '' }}</textarea>
+
+      <label for="due_date">Due Date</label>
+      <input id="due_date" name="due_date" type="date" value="{{ task.due_date if task else '' }}" />
+
+      {% if task %}
+        <label class="checkbox-label">
+          <input type="checkbox" name="completed" {% if task.completed %}checked{% endif %} /> Completed
+        </label>
+      {% endif %}
+
+      <button type="submit" class="button primary">{% if task %}Save Changes{% else %}Add Task{% endif %}</button>
+    </form>
+  </section>
+{% endblock %}

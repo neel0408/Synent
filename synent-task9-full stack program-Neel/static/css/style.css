@@ -1,0 +1,227 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, sans-serif;
+  background: #f9fafb;
+  color: #1f2937;
+  min-height: 100vh;
+}
+
+.container {
+  width: min(1100px, 94%);
+  margin: 0 auto;
+  padding: 1.5rem 0;
+}
+
+.site-header {
+  background: #111827;
+  color: #f9fafb;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+nav a {
+  color: #d1d5db;
+  text-decoration: none;
+  margin-left: 1rem;
+}
+
+nav a:hover {
+  color: #f9fafb;
+}
+
+.hero,
+.auth-card,
+.dashboard-header,
+.empty-state {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 18px;
+  padding: 2rem;
+  margin-top: 1.5rem;
+}
+
+.hero h1,
+.auth-card h2,
+.dashboard-header h2 {
+  margin-top: 0;
+}
+
+.hero p,
+.auth-card p,
+.empty-state p {
+  color: #4b5563;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.95rem 1.35rem;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.button.primary {
+  background: #2563eb;
+  color: #ffffff;
+}
+
+.button.secondary {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.button.small,
+.button.tiny {
+  font-size: 0.85rem;
+  padding: 0.55rem 0.9rem;
+}
+
+button.button {
+  border: none;
+}
+
+.auth-card form {
+  display: grid;
+  gap: 1rem;
+}
+
+label {
+  font-weight: 600;
+  color: #374151;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 12px;
+  font: inherit;
+  background: #f8fafc;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+footer.site-footer {
+  text-align: center;
+  padding: 1rem 0;
+  color: #6b7280;
+}
+
+.flashes {
+  display: grid;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.flash {
+  padding: 1rem 1.25rem;
+  border-radius: 14px;
+  border: 1px solid transparent;
+}
+
+.flash.success {
+  color: #065f46;
+  background: #d1fae5;
+  border-color: #a7f3d0;
+}
+
+.flash.error {
+  color: #7f1d1d;
+  background: #fee2e2;
+  border-color: #fecaca;
+}
+
+.flash.warning {
+  color: #713f12;
+  background: #fef3c7;
+  border-color: #fde68a;
+}
+
+.task-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.task-card {
+  padding: 1.5rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  background: #ffffff;
+}
+
+.task-card.completed {
+  opacity: 0.8;
+  border-color: #d1fae5;
+}
+
+.task-card header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+}
+
+.task-card h3 {
+  margin: 0;
+}
+
+.task-actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.task-card footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.checkbox-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+}
+
+@media (max-width: 720px) {
+  .header-inner,
+  .dashboard-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .task-card footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

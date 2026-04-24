@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Welcome | Task Manager{% endblock %}
+
+{% block content %}
+  <section class="hero">
+    <h1>Simple Task Management</h1>
+    <p>Register, log in, and keep your daily to-dos organized with a clean interface and task tracking.</p>
+    {% if user %}
+      <a class="button primary" href="{{ url_for('dashboard') }}">Go to Dashboard</a>
+    {% else %}
+      <a class="button primary" href="{{ url_for('register') }}">Get Started</a>
+      <a class="button secondary" href="{{ url_for('login') }}">Login</a>
+    {% endif %}
+  </section>
+{% endblock %}
